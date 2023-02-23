@@ -10,48 +10,46 @@
 
 <body>
     <main>
-        <header>
+        <header class="container">
             <h1>Welcome to the Concrete Calculator Application</h1>
-            <p>Provided by Carruth & Son Concrete</p>
+            <p id="sponsor">Provided by Carruth & Son Concrete</p>
             <p>Use the various calculator options provided in this web application to calculate the apporximate
                 amount of concrete that is necessary to complete your project.
             </p>
         </header>
         <section>
-            <h2>Choose from the range of calculator options</h2>
-            <article>
-                <h3>Side Walk Calculator</h3>
-                <form>
+            <h2 class="container">Choose from the range of calculator options</h2>
+            <article class="container">
+                <h3 class="title">Side Walk Calculator</h3>
                     <table>
                         <tbody>
                             <tr>
-                                <td><label>Length</label></td>
+                                <td class="align-right"><label>Length</label></td>
                                 <td><input type="text"></td>
-                                <td>Feet</td>
+                                <td class="padded-left">Feet</td>
                             </tr>
                             <tr>
-                                <td><label>Width</label></td>
+                                <td class="align-right"><label>Width</label></td>
                                 <td><input type="text"></td>
-                                <td>Feet</td>
+                                <td class="padded-left">Feet</td>
                             </tr>
                             <tr>
-                                <td><label>Thickness</label></td>
+                                <td class="align-right"><label>Thickness</label></td>
                                 <td><input type="text"></td>
-                                <td>Inches</td>
+                                <td class="padded-left">Inches</td>
                             </tr>
                             <tr>
-                                <td>Total Yardage</td>
+                                <td class="align-right"><label>Total Yardage</label></td>
                                 <td><input type="text"></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td><input type="submit" value="Calculate"></td>
-                                <td><button>Clear</button></td>
+                                <td class="padded-left"><button class="clear">Clear</button></td>
                             </tr>
                         </tbody>
                     </table>
-                </form>
             </article>
         </section>
     </main>

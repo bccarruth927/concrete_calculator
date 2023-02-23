@@ -1,0 +1,82 @@
+:root {
+    --container-bg-color: #E4DEAE;
+    --font-color: #133A1B;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imgs/bg.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.container {
+    margin: 25px;
+    padding: 10px;
+    background-color: var(--container-bg-color);
+    border: none;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+header h1, header p {
+    text-align: center;
+    padding: 15px;
+}
+
+#sponsor {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.title {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-right label {
+    margin-right: 10px;
+}
+
+.padded-left {
+    padding-left: 10px;
+}
+
+input[type=text] {
+    width: 100px;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+    width: 100px;
+    background-color: var(--font-color);
+    color: #f3f3f3;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.clear {
+    margin-top: 10px;
+    padding: 5px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+}
