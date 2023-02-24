@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imgs/bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(imgs/bg.jpg);
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,32 +19,55 @@ body {
     position: relative;
 }
 
+main {
+    margin: 0 25px;
+}
+
 .container {
-    margin: 25px;
+    margin: 25px auto;;
     padding: 10px;
     background-color: var(--container-bg-color);
     border: none;
     border-radius: 10px;
 }
 
-h2 {
-    text-align: center;
+.calc-container {
+    max-width: 325px;
 }
 
-header h1, header p {
+#main-header {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 #sponsor {
-    text-align: center;
     font-weight: bold;
     padding: 10px 0;
 }
 
-.title {
+#section-header {
+    text-align: center;
+    max-width: 600px;
+    padding: 10px;
+}
+
+#section-header p {
+    margin-top: 10px;
+}
+
+#flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.calc-title {
     text-align: center;
     padding: 10px 0;
+}
+
+td {
+    line-height: 24px;
 }
 
 .align-right {
@@ -59,18 +82,23 @@ header h1, header p {
     padding-left: 10px;
 }
 
-input[type=text] {
+input[type=number] {
     width: 100px;
 }
+
+/*input[type=text] {
+    width: 100px;
+}*/
 
 input[type=submit] {
     margin-top: 10px;
     width: 100px;
     background-color: var(--font-color);
     color: #f3f3f3;
-    padding: 5px;
+    padding: 10px;
     border: none;
     border-radius: 4px;
+    font-size: 18px;
     cursor: pointer;
 }
 

@@ -10,47 +10,55 @@
 
 <body>
     <main>
-        <header class="container">
+        <header class="container" id="main-header">
             <h1>Welcome to the Concrete Calculator Application</h1>
-            <p id="sponsor">Provided by Carruth & Son Concrete</p>
+            <p id="sponsor">Provided by Carruth & Son Concrete<br>
+                Need concrete in the <strong>Southern Maryland area</strong>? Vist our website at 
+                <a href="#">carruthandson.com</a></p>
             <p>Use the various calculator options provided in this web application to calculate the apporximate
                 amount of concrete that is necessary to complete your project.
             </p>
         </header>
-        <section>
-            <h2 class="container">Choose from the range of calculator options</h2>
-            <article class="container">
-                <h3 class="title">Side Walk Calculator</h3>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="align-right"><label for="slab-length">Length</label></td>
-                                <td><input type="number" id="slab-length" name="slab-length"></td>
-                                <td class="padded-left">Feet</td>
-                            </tr>
-                            <tr>
-                                <td class="align-right"><label for="slab-width">Width</label></td>
-                                <td><input type="number" id="slab-width" name="thickness"></td>
-                                <td class="padded-left">Feet</td>
-                            </tr>
-                            <tr>
-                                <td class="align-right"><label for="slab-thickness">Thickness</label></td>
-                                <td><input type="number" id="slab-thickness" name="slab-thickness"></td>
-                                <td class="padded-left">Inches</td>
-                            </tr>
-                            <tr>
-                                <td class="align-right" id="slab-long"><label for="slab-total">Total Yardage</label></td>
-                                <td><input type="number" id="slab-total" name="slab-total" readonly></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input type="submit" value="Calculate" id="slab-btn" name="slab-btn"></td>
-                                <td class="padded-left"><button class="clear" id="slab-clear">Clear</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </article>
+        <section id="main-section">
+            <header class="container" id="section-header">
+                <h2>Choose from the range of calculator options</h2>
+                <p>Calculations are rounded to the closest <strong>WHOLE</strong> number!<br>
+                We recommend when placing an order for concrete you order one more than the number provided</p>
+            </header>
+            <div id="flex-box">
+                <article class="container calc-container">
+                    <h3 class="calc-title">Slab/Side Walk/Flatwork Calculator</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="align-right"><label for="slab-length">Length</label></td>
+                                    <td><input type="number" id="slab-length" name="slab-length"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="slab-width">Width</label></td>
+                                    <td><input type="number" id="slab-width" name="thickness"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="slab-thickness">Thickness</label></td>
+                                    <td><input type="number" id="slab-thickness" name="slab-thickness"></td>
+                                    <td class="padded-left">Inches</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right" id="slab-long"><label for="slab-total">Total Yards</label></td>
+                                    <td><input type="number" id="slab-total" name="slab-total" readonly></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Calculate" id="slab-btn" name="slab-btn"></td>
+                                    <td class="padded-left"><button class="clear" id="slab-clear">Clear</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+            </div>
             <script src="app.js"></script>
         </section>
     </main>
