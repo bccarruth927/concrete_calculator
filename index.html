@@ -26,6 +26,7 @@
                 We recommend when placing an order for concrete you order one more than the number provided</p>
             </header>
             <div id="flex-box">
+                <!--Slab/Sidewalk/Flatowrk Calculator-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Slab/Side Walk/Flatwork Calculator</h3>
                         <table>
@@ -37,7 +38,7 @@
                                 </tr>
                                 <tr>
                                     <td class="align-right"><label for="slab-width">Width</label></td>
-                                    <td><input type="number" id="slab-width" name="thickness"></td>
+                                    <td><input type="number" id="slab-width" name="slab-width"></td>
                                     <td class="padded-left">Feet</td>
                                 </tr>
                                 <tr>
@@ -58,6 +59,45 @@
                             </tbody>
                         </table>
                 </article>
+                <!--Wall/Footer Calculator-->
+                <article class="container calc-container">
+                    <h3 class="calc-title">Wall/Footer Calculator</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="align-right"><label for="wall-length">Length</label></td>
+                                    <td><input type="number" id="wall-length" name="wall-length"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="wall-width">Width</label></td>
+                                    <td><input type="number" id="wall-width" name="wall-width"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="wall-height">Height</label></td>
+                                    <td><input type="number" id="wall-height" name="wall-height"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="wall-channel">Channel Width</label></td>
+                                    <td><input type="number" id="wall-channel" name="wall-channel"></td>
+                                    <td class="padding-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="wall-total">Total Yards</label></td>
+                                    <td><input type="number" id="wall-total" name="wall-total" readonly></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Calculate" id="wall-btn" name="wall-btn"></td>
+                                    <td class="padded-left"><button class="clear" id="wall-clear">Clear</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <!--Stairs Calculator-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Stair Calculator</h3>
                         <table>

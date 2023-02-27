@@ -17,6 +17,31 @@ slabCalcBtn.addEventListener('click', function determineCubicYards() {
     return document.getElementById('slab-total').value = Math.floor(volume / 27); //Final result added to output
 });
 
+//Global variables for buttons inside the wall/footer calculator
+const wallCalcBtn = document.getElementById('wall-btn');
+const wallClear = document.getElementById('wall-clear');
+
+//Event listener on the Calculate button for the wall/footer calculator
+wallCalcBtn.addEventListener('click', function determineWallCubicYards() {
+    const wallLength = document.getElementById('wall-length').value; //Variable for wall length
+    const wallWidth = document.getElementById('wall-width').value; //Variable for wall width
+    const wallHeight = document.getElementById('wall-height').value; //Variable for wall height
+    const channelWidth = document.getElementById('wall-channel').value; //Variable for channel width
+    //Helper function to find the total area volume of the wall/footer project
+    const totalAreaVolume = () => {
+        return wallLength * wallWidth * wallHeight;
+    };
+    const innerWallLength = wallLength - (channelWidth * 2); //Variable for inner wall length
+    const innerWallWidth = wallWidth - (channelWidth * 2); //Variable for inner wall width
+    //Helper function to find the inner volume area
+    const innerAreaVolume = () => {
+        return innerWallLength * innerWallWidth * wallHeight;
+    };
+    const volume = totalAreaVolume() - innerAreaVolume(); //Variable for wall/footer volume
+
+    return document.getElementById('wall-total').value = Math.floor(volume / 27); //Final result added to output
+});
+
 //Gloabl variables for buttons inside the stair calculator
 const stairCalcBtn = document.getElementById('stair-btn');
 const stairClear = document.getElementById('stair-clear');
@@ -30,20 +55,17 @@ stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
     const determineStairBaseTriangularPrism = () => {
         return stairBaseLength * stairBaseWidth * stairBaseHeight * 0.5;
     };
-    //Local variable declaration for the stair riser
-    const stairRiser = document.getElementById('stair-riser').value;
+    const stairRiser = document.getElementById('stair-riser').value; //Variable for the stair riser
     //Helper function to convert the stair riser inches value to feet
     const convertStairRiser = () => {
         return stairRiser / 12;
     };
-    //Local variable declaration for the stair tread
-    const stairTread = document.getElementById('stair-tread').value;
+    const stairTread = document.getElementById('stair-tread').value; //Variable for the stair tread
     //Helper function to convert the stair tread inches value to feet
     const convertStairTread = () => {
         return stairTread / 12;
     };
-    //Local variable declaration for the step count
-    const stepCount = document.getElementById('step-count').value;
+    const stepCount = document.getElementById('step-count').value; //Variable for the step count
     //Helper function to determine the volume of a single step
     const determineVolumeOfStep = () => {
         return stairBaseWidth * convertStairRiser() * convertStairTread() * 0.5;
@@ -55,6 +77,5 @@ stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
     //Finding the total volume of the stair base triangular prism and the total volume of all stairs
     const volume = determineStairBaseTriangularPrism() + determineTotalVolumeOfSteps();
     
-    //Finding the total cubic yards in steps
-    return document.getElementById('stair-total').value = Math.floor(volume / 27);
+    return document.getElementById('stair-total').value = Math.floor(volume / 27); //Final result added to output
 });
