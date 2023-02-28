@@ -3,7 +3,7 @@ const slabCalcBtn = document.getElementById('slab-btn');
 const slabClear = document.getElementById('slab-clear');
 
 //Event listener on the Calculate button for the slab/sidewalk calculator
-slabCalcBtn.addEventListener('click', function determineCubicYards() {
+slabCalcBtn.addEventListener('click', function determineSlabCubicYards() {
     //Helper function to convert inches into feet
     let slabThickness = document.getElementById('slab-thickness').value; //Variable for slab thickness input
     const convertInchesToFeet = () => { //Declared helper function convertInchesToFeet
@@ -16,6 +16,21 @@ slabCalcBtn.addEventListener('click', function determineCubicYards() {
 
     return document.getElementById('slab-total').value = Math.floor(volume / 27); //Final result added to output
 });
+
+//Global variables for the buttons inside the pier hole/hole calculator
+const holeCalcBtn = document.getElementById('pier-btn');
+const holeClear = document.getElementById('pier-clear');
+
+//Event listener on the Calculate button for the pier hole/hole calculator
+holeCalcBtn.addEventListener('click', function determineHoleCubicYards() {
+    const holeDiameter = document.getElementById('pier-diameter').value; //Variable for hole diameter
+    const holeHeight = document.getElementById('pier-height').value; //Variable for hole height
+    const holeRadius = holeDiameter / 2; //Variable for hole radius
+    const pi = Math.PI; //Variable assigned to Math PI object
+    const volume = pi * Math.pow(holeRadius, 2) * holeHeight; //Variable for total volume of hole
+
+    return document.getElementById('pier-total').value = Math.floor(volume / 27);
+})
 
 //Global variables for buttons inside the wall/footer calculator
 const wallCalcBtn = document.getElementById('wall-btn');

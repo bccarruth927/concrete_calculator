@@ -59,6 +59,34 @@
                             </tbody>
                         </table>
                 </article>
+                <!--Pier Hole/Hole calculator-->
+                <article class="container calc-container">
+                    <h3 class="calc-title">Hole/Pier Hole Calculator</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="align-right"><label for="pier-diameter">Diameter</label></td>
+                                    <td><input type="number" id="pier-diameter" name="pier-diameter"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="pier-height">Height</label></td>
+                                    <td><input type="number" id="pier-height" name="pier-height"></td>
+                                    <td class="padded-left">Feet</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="pier-total">Total Yards</label></td>
+                                    <td><input type="number" id="pier-total" name="pier-total" readonly></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Calculate" id="pier-btn" name="pier-btn"></td>
+                                    <td class="padded-left"><button class="clear" id="pier-clear">Clear</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
                 <!--Wall/Footer Calculator-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Wall/Footer Calculator</h3>
@@ -82,7 +110,7 @@
                                 <tr>
                                     <td class="align-right"><label for="wall-channel">Channel Width</label></td>
                                     <td><input type="number" id="wall-channel" name="wall-channel"></td>
-                                    <td class="padding-left">Feet</td>
+                                    <td class="padded-left">Feet</td>
                                 </tr>
                                 <tr>
                                     <td class="align-right"><label for="wall-total">Total Yards</label></td>
