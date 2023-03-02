@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<hmtl lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -26,157 +26,138 @@
                 We recommend when placing an order for concrete you order one more than the number provided</p>
             </header>
             <div id="flex-box">
-                <!--Slab/Sidewalk/Flatowrk Calculator-->
+                <!--Calculator for slab, sidewalk and flatwork type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Slab/Side Walk/Flatwork Calculator</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="align-right"><label for="slab-length">Length</label></td>
-                                    <td><input type="number" id="slab-length" name="slab-length"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="slab-width">Width</label></td>
-                                    <td><input type="number" id="slab-width" name="slab-width"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="slab-thickness">Thickness</label></td>
-                                    <td><input type="number" id="slab-thickness" name="slab-thickness"></td>
-                                    <td class="padded-left">Inches</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right" id="slab-long"><label for="slab-total">Total Yards</label></td>
-                                    <td><input type="number" id="slab-total" name="slab-total" readonly></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" value="Calculate" id="slab-btn" name="slab-btn"></td>
-                                    <td class="padded-left"><button class="clear" id="slab-clear">Clear</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <fieldset class="grid">
+                        <label for="slab-length" class="align-right">Length: </label>
+                        <input type="number" id="slab-length" name="slab-length">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label for="slab-width" class="align-right">Width: </label>
+                        <input type="number" id="slab-width" name="slab-width">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label for="slab-height" class="align-right">Height: </label>
+                        <input type="number" id="slab-height" name="slab-height">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label for="slab-total" class="align-right">Total Yards: </label>
+                        <input type="text" id="slab-total" name="slab-total" readonly>
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="slab-btn" name="slab-btn">
+                        <button class="clear" id="slab-clear">Clear</button>
+                    </fieldset>
                 </article>
-                <!--Pier Hole/Hole calculator-->
+                <!--Ending of the slab, sidewalk, and flatwork calculator-->
+                <!--Calculator for hole, pier hole, round work type projects-->
                 <article class="container calc-container">
-                    <h3 class="calc-title">Hole/Pier Hole Calculator</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="align-right"><label for="pier-diameter">Diameter</label></td>
-                                    <td><input type="number" id="pier-diameter" name="pier-diameter"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="pier-height">Height</label></td>
-                                    <td><input type="number" id="pier-height" name="pier-height"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="pier-total">Total Yards</label></td>
-                                    <td><input type="number" id="pier-total" name="pier-total" readonly></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" value="Calculate" id="pier-btn" name="pier-btn"></td>
-                                    <td class="padded-left"><button class="clear" id="pier-clear">Clear</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h3 class="calc-title">Hole/Pier Hole/Round Work</h3>
+                    <fieldset class="grid">
+                        <label class="align-right" for="pier-diameter">Diameter: </label>
+                        <input type="number" id="pier-diameter" name="pier-diameter">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="pier-height">Height: </label>
+                        <input type="number" id="pier-height" name="pier-height">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="pier-total">Total Yards: </label>
+                        <input type="text" id="pier-total" name="pier-total" readonly>
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="pier-btn" name="pier-btn">
+                        <button class="clear" id="pier-clear">Clear</button>
+                    </fieldset>
                 </article>
-                <!--Wall/Footer Calculator-->
+                <!--Ending of the hole, pier hole, round work calculator-->
+                <!--Calculator for wall and footer type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Wall/Footer Calculator</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="align-right"><label for="wall-length">Length</label></td>
-                                    <td><input type="number" id="wall-length" name="wall-length"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="wall-width">Width</label></td>
-                                    <td><input type="number" id="wall-width" name="wall-width"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="wall-height">Height</label></td>
-                                    <td><input type="number" id="wall-height" name="wall-height"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="wall-channel">Channel Width</label></td>
-                                    <td><input type="number" id="wall-channel" name="wall-channel"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="wall-total">Total Yards</label></td>
-                                    <td><input type="number" id="wall-total" name="wall-total" readonly></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" value="Calculate" id="wall-btn" name="wall-btn"></td>
-                                    <td class="padded-left"><button class="clear" id="wall-clear">Clear</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <fieldset class="grid">
+                        <label class="align-right" for="wall-length">Length: </label>
+                        <input type="number" id="wall-length" name="wall-length">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="wall-width">Width: </label>
+                        <input type="number" id="wall-width" name="wall-width">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="wall-height">Height: </label>
+                        <input type="number" id="wall-height" name="wall-height">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="wall-channel">Channel Width: </label>
+                        <input type="number" id="wall-channel" name="wall-channel">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="wall-total">Total Yards: </label>
+                        <input type="text" id="wall-total" name="wall-total" readonly>
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="wall-btn" name="wall-btn">
+                        <button class="clear" id="wall-clear">Clear</button>
+                    </fieldset>
                 </article>
-                <!--Stairs Calculator-->
+                <!--Ending of the wall, footer calculator-->
+                <!--Calculator for stair type projects-->
                 <article class="container calc-container">
-                    <h3 class="calc-title">Stair Calculator</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="align-right"><label for="stair-length">Base Length</label></td>
-                                    <td><input type="number" id="stair-length" name="stair-length"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="stair-width">Base Width</label></td>
-                                    <td><input type="number" id="stair-width" name="stair-width"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="stair-height">Base Height</label></td>
-                                    <td><input type="number" id="stair-height" name="stair-height"></td>
-                                    <td class="padded-left">Feet</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="stair-riser">Riser</label></td>
-                                    <td><input type="number" id="stair-riser" name="stair-riser"></td>
-                                    <td class="padded-left">Inches</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="stair-tread">Tread</label></td>
-                                    <td><input type="number" id="stair-tread" name="stair-tread"></td>
-                                    <td class="padded-left">Inches</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="step-count">Step Count</label></td>
-                                    <td><input type="number" id="step-count" name="step-count"></td>
-                                    <td class="padded-left">Count</td>
-                                </tr>
-                                <tr>
-                                    <td class="align-right"><label for="stair-total">Total Yards</label></td>
-                                    <td><input type="number" id="stair-total" name="stair-total" readonly></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" value="Calculate" id="stair-btn" name="stair-btn"></td>
-                                    <td class="padded-left"><button class="clear" id="stair-clear">Clear</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h3 class="calc-title">Stairs Calculator</h3>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-length">Base Height: </label>
+                        <input type="number" id="stair-length" name="stair-length">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-width">Base Width: </label>
+                        <input type="number" id="stair-width" name="stair-width">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-height">Base Height: </label>
+                        <input type="number" id="stair-height" name="stair-height">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-riser">Riser: </label>
+                        <input type="number" id="stair-riser" name="stair-riser">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-tread">Tread: </label>
+                        <input type="number" id="stair-tread" name="stair-tread">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="stair-total">Total Yards: </label>
+                        <input type="number" id="stair-total" name="stair-total">
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="stair-btn" name="stair-btn">
+                        <button class="clear" id="stair-clear">Clear</button>
+                    </fieldset>
                 </article>
             </div>
-            <script src="app.js"></script><!--Place JavaScript file here if it does not work in the head tag-->
         </section>
     </main>
 </body>
 
-</hmtl>
+</html>
