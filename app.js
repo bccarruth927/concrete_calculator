@@ -123,3 +123,22 @@ curbCalcBtn.addEventListener('click', function determineCurbCubicYards() {
 
     return document.getElementById('curb-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
+
+//Global variables for the buttons in the drain/tunnel calculator
+const drainCalcBtn = document.getElementById('drain-btn');
+const drainClear = document.getElementById('drain-clear');
+
+//Event Listener on the Calculate button for the drain/tunnel calulator
+drainCalcBtn.addEventListener('click', function determineDrainCubicYards() {
+    const outerDiameter = document.getElementById('outer-diameter').value; //Variable for outer diameter
+    const innerDiameter = document.getElementById('inner-diameter').value; //Variable for inner diameter
+    const drainLength = document.getElementById('drain-length').value; //Variable for total length of drain/tunnel
+    const outerRadius = outerDiameter / 2; //Variable for outer radius
+    const innerRadius = innerDiameter / 2; //Variable for inner radius
+    const pi = Math.PI; //Variable for PI object
+    const outerVolume = pi * Math.pow(outerRadius, 2) * drainLength; //Variable for outer volume total
+    const innerVolume = pi * Math.pow(innerRadius, 2) * drainLength; //Variable for inner volume total
+    const volume = outerVolume - innerVolume; //Variable for total drain volume
+
+    return document.getElementById('drain-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+});

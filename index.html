@@ -58,7 +58,7 @@
                 <!--Ending of the slab, sidewalk, and flatwork calculator-->
                 <!--Calculator for hole, pier hole, round work type projects-->
                 <article class="container calc-container">
-                    <h3 class="calc-title">Hole/Pier Hole/Round Work</h3>
+                    <h3 class="calc-title">Hole/Pier Hole/Round Work Calculator</h3>
                     <fieldset class="grid">
                         <label class="align-right" for="pier-diameter">Diameter: </label>
                         <input type="number" id="pier-diameter" name="pier-diameter">
@@ -198,6 +198,36 @@
                         <div></div>
                         <input type="submit" value="Calculate" id="curb-btn" name="curb-btn">
                         <button class="clear" id="curb-clear">Clear</button>
+                    </fieldset>
+                </article>
+                <!--Ending of curb/gutter calculator-->
+                <!--Calculator for the drain/tunnel calculator-->
+                <article class="container calc-container">
+                    <h3 class="calc-title">Drain/Tunnel Calculator</h3>
+                    <fieldset class="grid">
+                        <label class="align-right" for="outer-diameter">Outer Diameter: </label>
+                        <input type="number" id="outer-diameter" name="outer-diameter">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-left" for="inner-diameter">Inner Diameter: </label>
+                        <input type="number" id="inner-diameter" name="inner-diameter">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="drain-length">Length: </label>
+                        <input type="number" id="drain-length" name="drain-length">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="drain-total">Total Yards: </label>
+                        <input type="text" id="drain-total" name="drain-total" readonly>
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="drain-btn" name="drain-btn">
+                        <button class="clear" id="drain-clear">Clear</button>
                     </fieldset>
                 </article>
                 <script src="app.js"></script>
