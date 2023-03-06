@@ -145,8 +145,13 @@
                         <p class="padded-left">Inches</p>
                     </fieldset>
                     <fieldset class="grid">
+                        <label class="align-right" for="step-count">Step Count: </label>
+                        <input type="number" id="step-count" name="step-count">
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
                         <label class="align-right" for="stair-total">Total Yards: </label>
-                        <input type="number" id="stair-total" name="stair-total">
+                        <input type="text" id="stair-total" name="stair-total" readonly>
                         <div></div>
                     </fieldset>
                     <fieldset class="grid">
@@ -155,6 +160,47 @@
                         <button class="clear" id="stair-clear">Clear</button>
                     </fieldset>
                 </article>
+                <!--Ending of the stair calculator-->
+                <!--Calculator for the curb/gutter calculator-->
+                <article class="container calc-container">
+                    <h3 class="calc-title">Curb/Gutter Calculator</h3>
+                    <fieldset class="grid">
+                        <label class="align-right" for="curb-length">Length: </label>
+                        <input type="number" id="curb-length" name="curb-length">
+                        <p class="padded-left">Feet</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="curb-depth">Curb Depth: </label>
+                        <input type="number" id="curb-depth" name="curb-depth">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="gutter-width">Gutter Width: </label>
+                        <input type="number" id="gutter-width" name="gutter-width">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="curb-height">Curb Height: </label>
+                        <input type="number" id="curb-height" name="curb-height">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="flag-thickness">Flag Thickness: </label>
+                        <input type="number" id="flag-thickness" name="flag-thickness">
+                        <p class="padded-left">Inches</p>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <label class="align-right" for="curb-total">Total Yards: </label>
+                        <input type="text" id="curb-total" name="curb-total" readonly>
+                        <div></div>
+                    </fieldset>
+                    <fieldset class="grid">
+                        <div></div>
+                        <input type="submit" value="Calculate" id="curb-btn" name="curb-btn">
+                        <button class="clear" id="curb-clear">Clear</button>
+                    </fieldset>
+                </article>
+                <script src="app.js"></script>
             </div>
         </section>
     </main>

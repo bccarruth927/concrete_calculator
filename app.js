@@ -14,7 +14,7 @@ slabCalcBtn.addEventListener('click', function determineSlabCubicYards() {
     const slabWidth = document.getElementById('slab-width').value; //Variable for slab width input
     const volume = Math.floor(slabLength * slabWidth * convertInchesToFeet()); //Forumla for total volume
 
-    return document.getElementById('slab-total').value = Math.floor(volume / 27); //Final result added to output
+    return document.getElementById('slab-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
 
 //Global variables for the buttons inside the pier hole/hole calculator
@@ -29,7 +29,7 @@ holeCalcBtn.addEventListener('click', function determineHoleCubicYards() {
     const pi = Math.PI; //Variable assigned to Math PI object
     const volume = pi * Math.pow(holeRadius, 2) * holeHeight; //Variable for total volume of hole
 
-    return document.getElementById('pier-total').value = Math.floor(volume / 27);
+    return document.getElementById('pier-total').value = Math.floor(volume / 27) + 1;
 })
 
 //Global variables for buttons inside the wall/footer calculator
@@ -54,7 +54,7 @@ wallCalcBtn.addEventListener('click', function determineWallCubicYards() {
     };
     const volume = totalAreaVolume() - innerAreaVolume(); //Variable for wall/footer volume
 
-    return document.getElementById('wall-total').value = Math.floor(volume / 27); //Final result added to output
+    return document.getElementById('wall-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
 
 //Gloabl variables for buttons inside the stair calculator
@@ -92,5 +92,34 @@ stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
     //Finding the total volume of the stair base triangular prism and the total volume of all stairs
     const volume = determineStairBaseTriangularPrism() + determineTotalVolumeOfSteps();
     
-    return document.getElementById('stair-total').value = Math.floor(volume / 27); //Final result added to output
+    return document.getElementById('stair-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+});
+
+//Global variables for the buttons in the curb/gutter calculator
+const curbCalcBtn = document.getElementById('curb-btn');
+const curbClear = document.getElementById('curb-clear');
+
+//Event Listener on the Calculate button for the curb calculator
+curbCalcBtn.addEventListener('click', function determineCurbCubicYards() {
+    const curbLength = document.getElementById('curb-length').value; //Variable for the curb length
+    const curbDepth = document.getElementById('curb-depth').value; //Variable for the curb depth
+    const gutterWidth = document.getElementById('gutter-width').value; //Variable for the gutter width
+    const curbHeight = document.getElementById('curb-height').value; //Variable for the curb height
+    const flagThickness = document.getElementById('flag-thickness').value; //Variable for the flag thickness
+    //Helper function to convert inches to feet
+    const convertInchesToFeet = (value) => {
+        return value / 12;
+    }
+    //Helper function to determine the total volume of the "curb" section
+    const curbVolume = () => {
+        const height = convertInchesToFeet(curbHeight) + convertInchesToFeet(flagThickness);
+        const volume = height * convertInchesToFeet(curbDepth) * curbLength;
+        return volume;
+    }
+    //Variable declaration for the total volume of the "gutter" section
+    const gutterVolume = convertInchesToFeet(gutterWidth) * convertInchesToFeet(flagThickness) * curbLength;
+    //Finding the total volume of the curb and gutter sections together
+    const volume = curbVolume() + gutterVolume; //Total volume of the curb and gutter sections
+
+    return document.getElementById('curb-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
