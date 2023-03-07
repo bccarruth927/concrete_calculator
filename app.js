@@ -1,50 +1,53 @@
+//Import helper functions from helper-functions.js
+import { convertInchesToFeet } from '../modules/helper-functions.js';
+
 //Global variables for buttons inside the slab/sidewalk calculator
 const slabCalcBtn = document.getElementById('slab-btn');
 const slabClear = document.getElementById('slab-clear');
 
 //Event listener on the Calculate button for the slab/sidewalk calculator
 slabCalcBtn.addEventListener('click', function determineSlabCubicYards() {
-    //Helper function to convert inches into feet
-    let slabThickness = document.getElementById('slab-height').value; //Variable for slab thickness input
-    const convertInchesToFeet = () => { //Declared helper function convertInchesToFeet
-        return slabThickness / 12;
-    }
+    const slabThickness = document.getElementById('slab-height').value; //Variable for slab thickness input
+    
     //Declared function to convert input measurments into total yardage required for slab project
     const slabLength = document.getElementById('slab-length').value; //Variable for slab length input
     const slabWidth = document.getElementById('slab-width').value; //Variable for slab width input
-    const volume = Math.floor(slabLength * slabWidth * convertInchesToFeet()); //Forumla for total volume
+    const volume = Math.floor(slabLength * slabWidth * convertInchesToFeet(slabThickness)); //Forumla for total volume
 
     return document.getElementById('slab-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
 
 //Event listener on the Clear button for the slab/sidewalk calculator
 slabClear.addEventListener('click', function clearSlabCaluclator() {
-    document.getElementById('slab-length').value = '';
-    document.getElementById('slab-width').value = '';
-    document.getElementById('slab-height').value = '';
-    document.getElementById('slab-total').value = '';
+    const calcIds = ['slab-length', 'slab-width', 'slab-height', 'slab-total'];
+
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
 
 //Global variables for the buttons inside the pier hole/hole calculator
-const holeCalcBtn = document.getElementById('pier-btn');
-const holeClear = document.getElementById('pier-clear');
+const roundCalcBtn = document.getElementById('round-btn');
+const roundClear = document.getElementById('round-clear');
 
 //Event listener on the Calculate button for the pier hole/hole calculator
-holeCalcBtn.addEventListener('click', function determineHoleCubicYards() {
-    const holeDiameter = document.getElementById('pier-diameter').value; //Variable for hole diameter
-    const holeHeight = document.getElementById('pier-height').value; //Variable for hole height
+roundCalcBtn.addEventListener('click', function determineHoleCubicYards() {
+    const holeDiameter = document.getElementById('round-diameter').value; //Variable for hole diameter
+    const holeHeight = document.getElementById('round-height').value; //Variable for hole height
     const holeRadius = holeDiameter / 2; //Variable for hole radius
     const pi = Math.PI; //Variable assigned to Math PI object
     const volume = pi * Math.pow(holeRadius, 2) * holeHeight; //Variable for total volume of hole
 
-    return document.getElementById('pier-total').value = Math.floor(volume / 27) + 1;
+    return document.getElementById('round-total').value = Math.floor(volume / 27) + 1;
 })
 
 //Event Listener on the Clear button for the pier hole/hole calculator
-holeClear.addEventListener('click', function clearHoleCalculator() {
-    document.getElementById('pier-diameter').value = '';
-    document.getElementById('pier-height').value = '';
-    document.getElementById('pier-total').value = '';
+roundClear.addEventListener('click', function clearHoleCalculator() {
+    const calcIds = ['round-diameter', 'round-height', 'round-total'];
+    
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
 
 //Global variables for buttons inside the wall/footer calculator
@@ -57,12 +60,14 @@ wallCalcBtn.addEventListener('click', function determineWallCubicYards() {
     const wallWidth = document.getElementById('wall-width').value; //Variable for wall width
     const wallHeight = document.getElementById('wall-height').value; //Variable for wall height
     const channelWidth = document.getElementById('wall-channel').value; //Variable for channel width
+    
     //Helper function to find the total area volume of the wall/footer project
     const totalAreaVolume = () => {
         return wallLength * wallWidth * wallHeight;
     };
     const innerWallLength = wallLength - (channelWidth * 2); //Variable for inner wall length
     const innerWallWidth = wallWidth - (channelWidth * 2); //Variable for inner wall width
+    
     //Helper function to find the inner volume area
     const innerAreaVolume = () => {
         return innerWallLength * innerWallWidth * wallHeight;
@@ -74,11 +79,11 @@ wallCalcBtn.addEventListener('click', function determineWallCubicYards() {
 
 //Event listener on the Clear button for the wall/footer calculator
 wallClear.addEventListener('click', function clearWallCalculator() {
-    document.getElementById('wall-length').value = '';
-    document.getElementById('wall-width').value = '';
-    document.getElementById('wall-height').value = '';
-    document.getElementById('wall-channel').value = '';
-    document.getElementById('wall-total').value = '';
+    const calcIds = ['wall-length', 'wall-width', 'wall-height', 'wall-channel', 'wall-total'];
+
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
 
 //Gloabl variables for buttons inside the stair calculator
@@ -95,20 +100,14 @@ stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
         return stairBaseLength * stairBaseWidth * stairBaseHeight * 0.5;
     };
     const stairRiser = document.getElementById('stair-riser').value; //Variable for the stair riser
-    //Helper function to convert the stair riser inches value to feet
-    const convertStairRiser = () => {
-        return stairRiser / 12;
-    };
     const stairTread = document.getElementById('stair-tread').value; //Variable for the stair tread
-    //Helper function to convert the stair tread inches value to feet
-    const convertStairTread = () => {
-        return stairTread / 12;
-    };
     const stepCount = document.getElementById('step-count').value; //Variable for the step count
+    
     //Helper function to determine the volume of a single step
     const determineVolumeOfStep = () => {
-        return stairBaseWidth * convertStairRiser() * convertStairTread() * 0.5;
+        return stairBaseWidth * convertInchesToFeet(stairRiser) * convertInchesToFeet(stairTread) * 0.5;
     };
+    
     //Helper function to determine the volume of all steps in the set of stairs
     const determineTotalVolumeOfSteps = () => {
         return determineVolumeOfStep() * stepCount;
@@ -121,13 +120,11 @@ stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
 
 //Event Listener for the Clear button for the stairs calculator
 stairClear.addEventListener('click', function clearStairCalculator() {
-    document.getElementById('stair-length').value = '';
-    document.getElementById('stair-width').value = '';
-    document.getElementById('stair-height').value = '';
-    document.getElementById('stair-riser').value = '';
-    document.getElementById('stair-tread').value = '';
-    document.getElementById('step-count').value = '';
-    document.getElementById('stair-total').value = '';
+    const calcIds = ['stair-length', 'stair-width', 'stair-height', 'stair-riser', 'stair-tread', 'step-count', 'stair-total'];
+    
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
 
 //Global variables for the buttons in the curb/gutter calculator
@@ -161,12 +158,11 @@ curbCalcBtn.addEventListener('click', function determineCurbCubicYards() {
 
 //Event Listener for the Clear button on the curb/gutter calculator
 curbClear.addEventListener('click', function clearCurbCalculator() {
-    document.getElementById('curb-length').value = '';
-    document.getElementById('curb-depth').value = '';
-    document.getElementById('gutter-width').value = '';
-    document.getElementById('curb-height').value = '';
-    document.getElementById('flag-thickness').value = '';
-    document.getElementById('curb-total').value = '';
+    const calcIds = ['curb-length', 'curb-depth', 'gutter-width', 'curb-height', 'flag-thickness', 'curb-total'];
+
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
 
 //Global variables for the buttons in the drain/tunnel calculator
@@ -190,8 +186,9 @@ drainCalcBtn.addEventListener('click', function determineDrainCubicYards() {
 
 //Event Listener on the Clear button for the drain/tunnel calculator
 drainClear.addEventListener('click', function clearDrainCalculator() {
-    document.getElementById('outer-diameter').value = '';
-    document.getElementById('inner-diameter').value = '';
-    document.getElementById('drain-length').value = '';
-    document.getElementById('drain-total').value = '';
+    const calcIds = ['outer-diameter', 'inner-diameter', 'drain-length', 'drain-total'];
+
+    for (let id = 0; id < calcIds.length; id++) {
+        document.getElementById(calcIds[id]).value = '';
+    }
 });
