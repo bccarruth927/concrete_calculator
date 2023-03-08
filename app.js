@@ -1,5 +1,7 @@
 //Import helper functions from helper-functions.js
-import { convertInchesToFeet } from '../modules/helper-functions.js';
+import { convertInchesToFeet, totalRectangleVolume, totalTriangularPrismVolume, simpleMultiply } from '../modules/helper-functions.js';
+//Import calculators object from objects.js
+//import { calculators } from '../modules/object.js';
 
 //Global variables for buttons inside the slab/sidewalk calculator
 const slabCalcBtn = document.getElementById('slab-btn');
@@ -7,44 +9,58 @@ const slabClear = document.getElementById('slab-clear');
 
 //Event listener on the Calculate button for the slab/sidewalk calculator
 slabCalcBtn.addEventListener('click', function determineSlabCubicYards() {
-    const slabThickness = document.getElementById('slab-height').value; //Variable for slab thickness input
     
-    //Declared function to convert input measurments into total yardage required for slab project
-    const slabLength = document.getElementById('slab-length').value; //Variable for slab length input
-    const slabWidth = document.getElementById('slab-width').value; //Variable for slab width input
-    const volume = Math.floor(slabLength * slabWidth * convertInchesToFeet(slabThickness)); //Forumla for total volume
+    //Local variables for the slab/sidewalk calculator
+    const slabLength = document.getElementById('slab-length').value;
+    const slabWidth = document.getElementById('slab-width').value;
+    const slabHeight = document.getElementById('slab-height').value;
+    
+    //Calculated volume for the slab/sidewalk calculator
+    const volume = Math.floor(slabLength * slabWidth * convertInchesToFeet(slabHeight));
 
-    return document.getElementById('slab-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+    //Final result being sent to the output
+    return document.getElementById('slab-total').value = Math.floor(volume / 27) + 1;
 });
 
 //Event listener on the Clear button for the slab/sidewalk calculator
 slabClear.addEventListener('click', function clearSlabCaluclator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['slab-length', 'slab-width', 'slab-height', 'slab-total'];
 
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
 });
 
-//Global variables for the buttons inside the pier hole/hole calculator
+//Global variables for the buttons inside the hole/pier hole/roundwork calculator
 const roundCalcBtn = document.getElementById('round-btn');
 const roundClear = document.getElementById('round-clear');
 
-//Event listener on the Calculate button for the pier hole/hole calculator
+//Event listener on the Calculate button for the hole/pier hole/round work calculator
 roundCalcBtn.addEventListener('click', function determineHoleCubicYards() {
-    const holeDiameter = document.getElementById('round-diameter').value; //Variable for hole diameter
-    const holeHeight = document.getElementById('round-height').value; //Variable for hole height
-    const holeRadius = holeDiameter / 2; //Variable for hole radius
-    const pi = Math.PI; //Variable assigned to Math PI object
-    const volume = pi * Math.pow(holeRadius, 2) * holeHeight; //Variable for total volume of hole
+    
+    //Local variables for the hole/pier hole/ roundwork calculator
+    const holeDiameter = document.getElementById('round-diameter').value;
+    const holeHeight = document.getElementById('round-height').value;
+    const holeRadius = holeDiameter / 2;
+    const pi = Math.PI;
 
+    //Calculated volume for the hole/pier hole/round work calculator
+    const volume = pi * Math.pow(holeRadius, 2) * holeHeight;
+
+    //Final result being sent to the output
     return document.getElementById('round-total').value = Math.floor(volume / 27) + 1;
 })
 
 //Event Listener on the Clear button for the pier hole/hole calculator
 roundClear.addEventListener('click', function clearHoleCalculator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['round-diameter', 'round-height', 'round-total'];
-    
+
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
@@ -56,31 +72,29 @@ const wallClear = document.getElementById('wall-clear');
 
 //Event listener on the Calculate button for the wall/footer calculator
 wallCalcBtn.addEventListener('click', function determineWallCubicYards() {
-    const wallLength = document.getElementById('wall-length').value; //Variable for wall length
-    const wallWidth = document.getElementById('wall-width').value; //Variable for wall width
-    const wallHeight = document.getElementById('wall-height').value; //Variable for wall height
-    const channelWidth = document.getElementById('wall-channel').value; //Variable for channel width
-    
-    //Helper function to find the total area volume of the wall/footer project
-    const totalAreaVolume = () => {
-        return wallLength * wallWidth * wallHeight;
-    };
-    const innerWallLength = wallLength - (channelWidth * 2); //Variable for inner wall length
-    const innerWallWidth = wallWidth - (channelWidth * 2); //Variable for inner wall width
-    
-    //Helper function to find the inner volume area
-    const innerAreaVolume = () => {
-        return innerWallLength * innerWallWidth * wallHeight;
-    };
-    const volume = totalAreaVolume() - innerAreaVolume(); //Variable for wall/footer volume
 
-    return document.getElementById('wall-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+    //Local variables for the wall/footer calculator
+    const wallLength = document.getElementById('wall-length').value;
+    const wallWidth = document.getElementById('wall-width').value;
+    const wallHeight = document.getElementById('wall-height').value;
+    const channelWidth = document.getElementById('wall-channel').value;
+    const innerWallLength = wallLength - (channelWidth * 2);
+    const innerWallWidth = wallWidth - (channelWidth * 2);
+    
+    //Calculated volume for the wall/footer calculator
+    const volume = totalRectangleVolume(wallLength, wallWidth, wallHeight) - totalRectangleVolume(innerWallLength, innerWallWidth, wallHeight);
+
+    //Final result being sent to the output
+    return document.getElementById('wall-total').value = Math.floor(volume / 27) + 1;
 });
 
 //Event listener on the Clear button for the wall/footer calculator
 wallClear.addEventListener('click', function clearWallCalculator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['wall-length', 'wall-width', 'wall-height', 'wall-channel', 'wall-total'];
 
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
@@ -92,36 +106,30 @@ const stairClear = document.getElementById('stair-clear');
 
 //Event listener on the Calculate button for the stair calculator
 stairCalcBtn.addEventListener('click', function determineStairCubicYards() {
-    const stairBaseLength = document.getElementById('stair-length').value; //Variable for base of stairs length
-    const stairBaseWidth = document.getElementById('stair-width').value; //Variable for base of stairs width
-    const stairBaseHeight = document.getElementById('stair-height').value; //Variable for base of stairs height
-    //Helper function to find the volume of the stair base triangular prism
-    const determineStairBaseTriangularPrism = () => {
-        return stairBaseLength * stairBaseWidth * stairBaseHeight * 0.5;
-    };
-    const stairRiser = document.getElementById('stair-riser').value; //Variable for the stair riser
-    const stairTread = document.getElementById('stair-tread').value; //Variable for the stair tread
-    const stepCount = document.getElementById('step-count').value; //Variable for the step count
+
+    //Local variables for the stairs calculator
+    const stairBaseLength = document.getElementById('stair-length').value;
+    const stairBaseWidth = document.getElementById('stair-width').value;
+    const stairBaseHeight = document.getElementById('stair-height').value;
+    const stairRiser = document.getElementById('stair-riser').value;
+    const stairTread = document.getElementById('stair-tread').value;
+    const stepCount = document.getElementById('step-count').value;
+    const singleStepVolume = totalTriangularPrismVolume(stairBaseWidth, convertInchesToFeet(stairRiser), convertInchesToFeet(stairTread));
+
+    //Finding the total volume of the stair base triangular prism and the total volume of all stairs together
+    const volume = totalTriangularPrismVolume(stairBaseLength, stairBaseWidth, stairBaseHeight) + simpleMultiply(singleStepVolume, stepCount);
     
-    //Helper function to determine the volume of a single step
-    const determineVolumeOfStep = () => {
-        return stairBaseWidth * convertInchesToFeet(stairRiser) * convertInchesToFeet(stairTread) * 0.5;
-    };
-    
-    //Helper function to determine the volume of all steps in the set of stairs
-    const determineTotalVolumeOfSteps = () => {
-        return determineVolumeOfStep() * stepCount;
-    };
-    //Finding the total volume of the stair base triangular prism and the total volume of all stairs
-    const volume = determineStairBaseTriangularPrism() + determineTotalVolumeOfSteps();
-    
-    return document.getElementById('stair-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+    //Final result sent to the output
+    return document.getElementById('stair-total').value = Math.floor(volume / 27) + 1;
 });
 
 //Event Listener for the Clear button for the stairs calculator
 stairClear.addEventListener('click', function clearStairCalculator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['stair-length', 'stair-width', 'stair-height', 'stair-riser', 'stair-tread', 'step-count', 'stair-total'];
     
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
@@ -133,33 +141,36 @@ const curbClear = document.getElementById('curb-clear');
 
 //Event Listener on the Calculate button for the curb calculator
 curbCalcBtn.addEventListener('click', function determineCurbCubicYards() {
-    const curbLength = document.getElementById('curb-length').value; //Variable for the curb length
-    const curbDepth = document.getElementById('curb-depth').value; //Variable for the curb depth
-    const gutterWidth = document.getElementById('gutter-width').value; //Variable for the gutter width
-    const curbHeight = document.getElementById('curb-height').value; //Variable for the curb height
-    const flagThickness = document.getElementById('flag-thickness').value; //Variable for the flag thickness
-    //Helper function to convert inches to feet
-    const convertInchesToFeet = (value) => {
-        return value / 12;
-    }
+
+    //Local variables for the curb/gutter calculator
+    const curbLength = document.getElementById('curb-length').value;
+    const curbDepth = document.getElementById('curb-depth').value;
+    const gutterWidth = document.getElementById('gutter-width').value;
+    const curbHeight = document.getElementById('curb-height').value;
+    const flagThickness = document.getElementById('flag-thickness').value;
+    const gutterVolume = convertInchesToFeet(gutterWidth) * convertInchesToFeet(flagThickness) * curbLength;
+    
     //Helper function to determine the total volume of the "curb" section
     const curbVolume = () => {
         const height = convertInchesToFeet(curbHeight) + convertInchesToFeet(flagThickness);
         const volume = height * convertInchesToFeet(curbDepth) * curbLength;
         return volume;
     }
-    //Variable declaration for the total volume of the "gutter" section
-    const gutterVolume = convertInchesToFeet(gutterWidth) * convertInchesToFeet(flagThickness) * curbLength;
-    //Finding the total volume of the curb and gutter sections together
-    const volume = curbVolume() + gutterVolume; //Total volume of the curb and gutter sections
 
-    return document.getElementById('curb-total').value = Math.floor(volume / 27) + 1; //Final result added to output
+    //Finding the total volume of the curb and gutter sections together
+    const volume = curbVolume() + gutterVolume;
+
+    //Final result sent to the input
+    return document.getElementById('curb-total').value = Math.floor(volume / 27) + 1;
 });
 
 //Event Listener for the Clear button on the curb/gutter calculator
 curbClear.addEventListener('click', function clearCurbCalculator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['curb-length', 'curb-depth', 'gutter-width', 'curb-height', 'flag-thickness', 'curb-total'];
 
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
@@ -171,23 +182,28 @@ const drainClear = document.getElementById('drain-clear');
 
 //Event Listener on the Calculate button for the drain/tunnel calulator
 drainCalcBtn.addEventListener('click', function determineDrainCubicYards() {
-    const outerDiameter = document.getElementById('outer-diameter').value; //Variable for outer diameter
-    const innerDiameter = document.getElementById('inner-diameter').value; //Variable for inner diameter
-    const drainLength = document.getElementById('drain-length').value; //Variable for total length of drain/tunnel
-    const outerRadius = outerDiameter / 2; //Variable for outer radius
-    const innerRadius = innerDiameter / 2; //Variable for inner radius
-    const pi = Math.PI; //Variable for PI object
-    const outerVolume = pi * Math.pow(outerRadius, 2) * drainLength; //Variable for outer volume total
-    const innerVolume = pi * Math.pow(innerRadius, 2) * drainLength; //Variable for inner volume total
-    const volume = outerVolume - innerVolume; //Variable for total drain volume
+    const outerDiameter = document.getElementById('outer-diameter').value;
+    const innerDiameter = document.getElementById('inner-diameter').value;
+    const drainLength = document.getElementById('drain-length').value;
+    const outerRadius = outerDiameter / 2;
+    const innerRadius = innerDiameter / 2;
+    const pi = Math.PI;
+    const outerVolume = pi * Math.pow(outerRadius, 2) * drainLength;
+    const innerVolume = pi * Math.pow(innerRadius, 2) * drainLength;
+
+    //Calculated volume of the drain/tunnel
+    const volume = outerVolume - innerVolume;
 
     return document.getElementById('drain-total').value = Math.floor(volume / 27) + 1; //Final result added to output
 });
 
 //Event Listener on the Clear button for the drain/tunnel calculator
 drainClear.addEventListener('click', function clearDrainCalculator() {
+
+    //Array containing the string ids of all inputs needing data reset
     const calcIds = ['outer-diameter', 'inner-diameter', 'drain-length', 'drain-total'];
 
+    //For loop iterating through the calcIds array and converting their values to an empty string
     for (let id = 0; id < calcIds.length; id++) {
         document.getElementById(calcIds[id]).value = '';
     }
