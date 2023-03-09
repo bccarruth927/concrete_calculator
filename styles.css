@@ -1,6 +1,11 @@
+/*Imported font families from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Merriweather&display=swap');
+
 :root {
-    --container-bg-color: #E4DEAE;
+    --container-bg-color: #ececec;
     --font-color: #133A1B;
+    --title-font: 'Lato', sans-serif;
+    --text-font: 'Merriweather', serif;
 }
 
 *, ::before, ::after {
@@ -23,7 +28,27 @@ main {
     margin: 0 25px;
 }
 
+h1, h2, h3 {
+    font-family: var(--title-font);
+    color: var(--font-color);
+}
+
+p {
+    font-family: var(--text-font);
+}
+
+label {
+    font-family: var(--text-font);
+    font-size: 13px;
+}
+
+hr {
+    width: 70%;
+    margin: 0px auto 20px auto;
+}
+
 .container {
+    max-width: 850px;
     margin: 25px auto;
     padding: 10px;
     background-color: var(--container-bg-color);
@@ -32,7 +57,7 @@ main {
 }
 
 .calc-container {
-    max-width: 400px;
+    max-width: 375px;
     min-width: 350px;
     max-height: 225px;
     overflow-y: scroll;
@@ -45,7 +70,7 @@ main {
 
 #sponsor {
     font-weight: bold;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 #section-header {
@@ -54,11 +79,11 @@ main {
     padding: 10px;
 }
 
-#section-header p {
-    margin-top: 10px;
+#section-header h2 {
+    padding: 15px 0;
 }
 
-#flex-box {
+.flex-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -66,7 +91,7 @@ main {
 
 .calc-title {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 10px;
 }
 
 .align-right {
@@ -98,9 +123,13 @@ input[type=submit] {
     margin-top: 10px;
     margin-left: 10px;
     padding: 5px;
-    width: 50px;
+    width: 75px;
+    background-color: var(--font-color);
+    color: #f3f3f3;
+    font-size: 14px;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .grid {
@@ -108,4 +137,21 @@ input[type=submit] {
     grid-template-columns: 33% 33% 33%;
     border: none;
     margin-top: 5px;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--font-color);
+    color: #f3f3f3;
+    padding: 20px 0;
+}
+
+#phone, #globe {
+    display: inline;
+    padding-left: 10px;
+}
+
+#globe {
+    text-decoration: none;
+    color: #f3f3f3;
 }

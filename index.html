@@ -4,8 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concrete Calculator Application</title>
+    <meta name="description" content="When buying concrete, buying to much or to little can become expensive! Use our calculator tools to find how much you need for your next project!">
+    <meta name="keywords" content="concrete calculator">
+    <meta name="author" content="Brenden C. Carruth">
+    <meta name="copyright" content="Brenden C. Carruth">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <title>Concrete Calculator - Carruth & Son Concrete</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/dc9f753c56.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,7 +20,7 @@
             <h1>Welcome to the Concrete Calculator Application</h1>
             <p id="sponsor">Provided by Carruth & Son Concrete<br>
                 Need concrete in the <strong>Southern Maryland area</strong>? Vist our website at 
-                <a href="#">carruthandson.com</a></p>
+                <a target="_blank" href="https://www.carruthandson.com/" rel="nofollow">carruthandson.com</a></p>
             <p>Use the various calculator options provided in this web application to calculate the apporximate
                 amount of concrete that is necessary to complete your project.
             </p>
@@ -22,13 +28,12 @@
         <section id="main-section">
             <header class="container" id="section-header">
                 <h2>Choose from the range of calculator options</h2>
-                <p>Calculations are rounded to the closest <strong>WHOLE</strong> number!<br>
-                We recommend when placing an order for concrete you order one more than the number provided</p>
             </header>
-            <div id="flex-box">
+            <div class="flex-box">
                 <!--Calculator for slab, sidewalk and flatwork type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Slab/Side Walk/Flatwork Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
                         <label for="slab-length" class="align-right">Length: </label>
                         <input type="number" id="slab-length" name="slab-length">
@@ -59,31 +64,33 @@
                 <!--Calculator for hole, pier hole, round work type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Hole/Pier Hole/Round Work Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
-                        <label class="align-right" for="pier-diameter">Diameter: </label>
-                        <input type="number" id="pier-diameter" name="pier-diameter">
+                        <label class="align-right" for="round-diameter">Diameter: </label>
+                        <input type="number" id="round-diameter" name="round-diameter">
                         <p class="padded-left">Feet</p>
                     </fieldset>
                     <fieldset class="grid">
-                        <label class="align-right" for="pier-height">Height: </label>
-                        <input type="number" id="pier-height" name="pier-height">
+                        <label class="align-right" for="round-height">Height: </label>
+                        <input type="number" id="round-height" name="round-height">
                         <p class="padded-left">Feet</p>
                     </fieldset>
                     <fieldset class="grid">
-                        <label class="align-right" for="pier-total">Total Yards: </label>
-                        <input type="text" id="pier-total" name="pier-total" readonly>
+                        <label class="align-right" for="round-total">Total Yards: </label>
+                        <input type="text" id="round-total" name="round-total" readonly>
                         <div></div>
                     </fieldset>
                     <fieldset class="grid">
                         <div></div>
-                        <input type="submit" value="Calculate" id="pier-btn" name="pier-btn">
-                        <button class="clear" id="pier-clear">Clear</button>
+                        <input type="submit" value="Calculate" id="round-btn" name="round-btn">
+                        <button class="clear" id="round-clear">Clear</button>
                     </fieldset>
                 </article>
                 <!--Ending of the hole, pier hole, round work calculator-->
                 <!--Calculator for wall and footer type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Wall/Footer Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
                         <label class="align-right" for="wall-length">Length: </label>
                         <input type="number" id="wall-length" name="wall-length">
@@ -119,6 +126,7 @@
                 <!--Calculator for stair type projects-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Stairs Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
                         <label class="align-right" for="stair-length">Base Height: </label>
                         <input type="number" id="stair-length" name="stair-length">
@@ -164,6 +172,7 @@
                 <!--Calculator for the curb/gutter calculator-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Curb/Gutter Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
                         <label class="align-right" for="curb-length">Length: </label>
                         <input type="number" id="curb-length" name="curb-length">
@@ -204,6 +213,7 @@
                 <!--Calculator for the drain/tunnel calculator-->
                 <article class="container calc-container">
                     <h3 class="calc-title">Drain/Tunnel Calculator</h3>
+                    <hr>
                     <fieldset class="grid">
                         <label class="align-right" for="outer-diameter">Outer Diameter: </label>
                         <input type="number" id="outer-diameter" name="outer-diameter">
@@ -230,10 +240,21 @@
                         <button class="clear" id="drain-clear">Clear</button>
                     </fieldset>
                 </article>
-                <script src="app.js"></script>
+                <script type="module" src="app.js"></script>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="flex-box">
+            <p id="copyright">&copy;Brenden Carruth</p>
+            <div>
+                <i class="fa-solid fa-phone"></i><p id="phone">(301)-274-4577</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-globe"></i><a id="globe" target="_blank" href="https://www.carruthandson.com/" rel="nofollow">carruthandson.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
