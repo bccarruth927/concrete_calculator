@@ -1,0 +1,41 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: sans-serif;
+  height: 100%;
+  font-size: 16px;
+}
+header {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  background-color: gray;
+}
+header figure {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px red solid;
+}
+header figure img {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header p {
+  width: 70%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.25rem;
+  border: 1px red solid;
+}
