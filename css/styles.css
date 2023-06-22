@@ -189,3 +189,6 @@ main .wrapper #calculators .calculator-container figure {
     height: 100%;
   }
 }
+.spacing-left {
+  margin-left: 0.25rem;
+}
