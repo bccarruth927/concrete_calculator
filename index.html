@@ -27,7 +27,7 @@
     <main>
         <div class="wrapper">
 
-            <!--Intoduction section containing intro text, company sponsorship and calculator instructions-->
+            <!--Introduction section containing intro text, company sponsorship and calculator instructions-->
             <section id="introduction">
                 <div>
                     <h1>Welcome to the Carruth & Son Concrete Calculator Application</h1>
@@ -56,6 +56,59 @@
             </section>
             <section id="calculators">
 
+                <!--Title container for the flatwork container-->
+                <div class="title">
+                    <div class="heading"><h3>Flatwork Calculator</h3></div>
+                    <div class="caret" id="flatwork-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <!--The container holding the flatwork calculator form and image aid-->
+                <div class="calculator-container" id="flatwork-calculator">
+                    <form action="#" name="flatwork-calculator">
+                        <fieldset class="grid">
+                            <label for="flatwork-length">Length:</label>
+                            <input type="number" name="flatwork-length" id="flatwork-length">
+                            <select id="flatwork-length-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="flatwork-length-inches">Inches</option>
+                                <option value="flatwork-length-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="flatwork-width">Width:</label>
+                            <input type="number" name="flatwork-width" id="flatwork-width">
+                            <select id="flatwork-width-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="flatwork-width-inches">Inches</option>
+                                <option value="flatwork-width-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="flatwork-height">Height:</label>
+                            <input type="number" name="flatwork-height" id="flatwork-height">
+                            <select id="flatwork-height-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="flatwork-height-inches">Inches</option>
+                                <option value="flatwork-height-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="flatwork-total-yards">Total:</label>
+                            <input type="text" name="flatwork-total-yards" id="flatwork-total-yards" readonly>
+                            <div></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" class="button" id="submit-flatwork-data">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-flatwork-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the flatwork calculator-->
+                    <figure>
+                        <img src="./imgs/flatwork-diagram.png" alt="flatwork 3D model visual aid">
+                    </figure>
+                </div>
             </section>
         </div>
     </main>

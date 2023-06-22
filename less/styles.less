@@ -92,5 +92,106 @@ main {
                 height: 100%;
             }
         }
+
+        #calculators {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            border: 1px green solid;
+
+            .title {
+                width: 90%;
+                display: flex;
+                background-color: gray;
+                padding: 1rem 0;
+
+                .heading {
+                    width: 80%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding-left: 0.5rem;
+                    color: white;
+                }
+
+                .caret {
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                }
+            }
+
+            .calculator-container {
+                width: 90%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: white;
+                color: black;
+
+                form {
+                    width: 90%;
+                    margin: 1.5rem 0;
+                    padding: 1rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    box-shadow: 0px 9px 15px -3px rgba(0,0,0,0.1);
+
+                    .grid {
+                        width: 100%;
+                        margin-top: 0.5rem;
+                        display: grid;
+                        grid-template-columns: 33% 33% 33%;
+                        border: none;
+                    }
+
+                    .button {
+                        font-size: 1rem;
+                        font-weight: bold;
+                        background-color: gray;
+                        color: black;
+                        padding: 0.75rem;
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .reset {
+                        .button();
+                        font-size: 0.75rem;
+                    }
+
+                    @media (min-width: 700px) {
+                        width: 48%;
+                        margin-left: 2%;
+                    }
+                }
+
+                figure {
+                    width: 90%;
+                    margin: 1.5rem 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media (min-width: 700px) {
+                        width: 48%;
+                        margin-left: 2%;
+                    }
+                }
+            }
+
+            @media (min-width: 700px) {
+                width: 50%;
+                height: 100%;
+            }
+        }
     }
 }
