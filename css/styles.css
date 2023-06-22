@@ -24,6 +24,11 @@ header figure {
   align-items: center;
   border: 1px red solid;
 }
+@media (min-width: 700px) {
+  header figure {
+    width: 10%;
+  }
+}
 header figure img {
   height: 80px;
   width: 80px;
@@ -38,4 +43,49 @@ header p {
   align-items: center;
   font-size: 1.25rem;
   border: 1px red solid;
+}
+@media (min-width: 700px) {
+  header p {
+    width: 90%;
+  }
+}
+main {
+  height: 100%;
+}
+main .wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 700px) {
+  main .wrapper {
+    height: 100%;
+  }
+}
+main .wrapper #introduction {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  border: 1px blue solid;
+}
+main .wrapper #introduction h1 {
+  padding: 1rem 0;
+  text-align: center;
+}
+main .wrapper #introduction p {
+  padding: 0.5rem 1.5rem;
+}
+main .wrapper #introduction ol {
+  list-style: none;
+}
+main .wrapper #introduction li {
+  padding: 0.25rem 1.5rem;
+}
+@media (min-width: 700px) {
+  main .wrapper #introduction {
+    width: 50%;
+    height: 100%;
+  }
 }
