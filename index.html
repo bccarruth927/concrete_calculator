@@ -54,6 +54,8 @@
                     </p>
                 </div>
             </section>
+
+            <!--Calculators section containing all the calculator applications available on the web application-->
             <section id="calculators">
 
                 <!--Title container for the flatwork container-->
@@ -95,7 +97,7 @@
                         <fieldset class="grid">
                             <label for="flatwork-total-yards">Total:</label>
                             <input type="text" name="flatwork-total-yards" id="flatwork-total-yards" readonly>
-                            <div></div>
+                            <div class="spacing-left blank-div"></div>
                         </fieldset>
                         <fieldset class="grid">
                             <div></div>
@@ -107,6 +109,321 @@
                     <!--The image aid for the flatwork calculator-->
                     <figure>
                         <img src="./imgs/flatwork-diagram.png" alt="flatwork 3D model visual aid">
+                    </figure>
+                </div>
+
+                <!--Title container for the round work calculator-->
+                <div class="title">
+                    <div class="heading"><h3>Round Work Calculator</h3></div>
+                    <div class="caret" id="round-work-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <!--The container holding the round work calculator form and image aid-->
+                <div class="calculator-container" id="round-work-calculator">
+                    <form action="#" name="round-work-calculator">
+                        <fieldset class="grid">
+                            <label for="round-work-diameter">Diameter:</label>
+                            <input type="number" name="round-work-diameter" id="round-work-diameter">
+                            <select id="round-work-diameter-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="round-work-diameter-inches">Inches</option>
+                                <option value="round-work-diameter-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="round-work-height">Height:</label>
+                            <input type="number" name="round-work-height" id="round-work-height">
+                            <select id="round-work-height-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="round-work-height-inches">Inches</option>
+                                <option value="round-work-height-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="round-work-quantity">Quantity:</label>
+                            <input type="number" name="round-work-quantity" id="round-work-quantity">
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="round-work-total-yards">Total:</label>
+                            <input type="text" name="round-work-total-yards" id="round-work-total-yards" readonly>
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" class="button" id="submit-round-work-data">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-round-work-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the round work calculator-->
+                    <figure>
+                        <img src="./imgs/round-work-diagram.png" alt="round work 3D model visual aid">
+                    </figure>
+                </div>
+
+                <!--Title container for the wall/footer calculator-->
+                <div class="title">
+                    <div class="heading"><h3>Wall/Footer Calculator</h3></div>
+                    <div class="caret" id="wall-footer-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <!--The container holding the wall/footer calculator form and image aid-->
+                <div class="calculator-container" id="wall-footer-calculator">
+                    <form action="#" name="wall-footer-calculator">
+                        <fieldset class="grid">
+                            <label for="wall-footer-length">Length:</label>
+                            <input type="number" id="wall-footer-length" name="wall-footer-length">
+                            <select id="wall-footer-length-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="wall-footer-length-inches">Inches</option>
+                                <option value="wall-footer-length-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="wall-footer-width">Width:</label>
+                            <input type="number" id="wall-footer-width" name="wall-footer-width">
+                            <select id="wall-footer-width-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="wall-footer-width-inches">Inches</option>
+                                <option value="wall-footer-width-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="wall-footer-height">Height:</label>
+                            <input type="number" id="wall-footer-height" name="wall-footer-height">
+                            <select id="wall-footer-height-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="wall-footer-height-inches">Inches</option>
+                                <option value="wall-footer-height-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="wall-footer-channel">Channel Width:</label>
+                            <input type="number" id="wall-footer-channel" name="wall-footer-channel">
+                            <select id="wall-footer-channel-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="wall-footer-channel-inches">Inches</option>
+                                <option value="wall-footer-channel-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="wall-footer-total-yards">Total:</label>
+                            <input type="text" id="wall-footer-total-yards" name="wall-footer-total-yards" readonly>
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" class="button" id="submit-wall-footer-data">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-wall-footer-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the wall/footer calculator-->
+                    <figure>
+                        <img src="./imgs/wall-footer-diagram.png" alt="wall/footer 3D model visual aid">
+                    </figure>
+                </div>
+
+                <!--Title container for the stairs calculator-->
+                <div class="title">
+                    <div class="heading"><h3>Stairs Calculator</h3></div>
+                    <div class="caret" id="stairs-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <!--The container holding the stairs calculator form and image aid-->
+                <div class="calculator-container" id="stairs-calculator">
+                    <form action="#" name="stairs-calculator">
+                        <fieldset class="grid">
+                            <label for="stair-base-length">Base Length:</label>
+                            <input type="number" id="stair-base-length" name="stair-base-length">
+                            <select id="stair-base-length-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="stair-base-length-inches">Inches</option>
+                                <option value="stair-base-length-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="stair-base-width">Base Width:</label>
+                            <input type="number" id="stair-base-width" name="stair-base-width">
+                            <select id="stair-base-width-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="stair-base-width-inches">Inches</option>
+                                <option value="stair-base-width-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="stair-base-height">Base Height:</label>
+                            <input type="number" id="stair-base-height" name="stair-base-height">
+                            <select id="stair-base-height-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="stair-base-height-inches">Inches</option>
+                                <option value="stair-base-height-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="stair-riser">Riser:</label>
+                            <input type="number" id="stair-riser" name="stair-riser">
+                            <select id="stair-riser-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="stair-riser-inches">Inches</option>
+                                <option value="stair-riser-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="stair-tread">Tread:</label>
+                            <input type="number" id="stair-tread" name="stair-tread">
+                            <select id="stair-tread-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="stair-tread-inches">Inches</option>
+                                <option value="stair-tread-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="step-count">Step Count:</label>
+                            <input type="number" id="step-count" name="step-count">
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="stair-total-yards">Total Yards: </label>
+                            <input type="text" id="stair-total-yards" name="stair-total-yards" readonly>
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" id="submit-stair-data" class="button">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-stair-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the stairs calculator-->
+                    <figure>
+                        <img src="./imgs/stairs-diagram.png" alt="stairs 3D model visual aid">
+                    </figure>
+                </div>
+
+                <!--Title container for the curb/gutter calculator-->
+                <div class="title">
+                    <div class="heading"><h3>Curb/Gutter Calculator</h3></div>
+                    <div class="caret" id="curb-gutter-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <!--The container holding the curb/gutter calculator form and image aid-->
+                <div class="calculator-container" id="curb-gutter-calculator">
+                    <form action="#" name="curb-gutter-calculator">
+                        <fieldset class="grid">
+                            <label for="curb-length">Length:</label>
+                            <input type="number" id="curb-length" name="curb-length">
+                            <select id="curb-length-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="curb-length-inches">Inches</option>
+                                <option value="curb-length-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="curb-depth">Curb Depth:</label>
+                            <input type="number" id="curb-depth" name="curb-depth">
+                            <select id="curb-depth-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="curb-depth-inches">Inches</option>
+                                <option value="curb-depth-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="gutter-width">Gutter Width:</label>
+                            <input type="number" id="gutter-width" name="gutter-width">
+                            <select id="gutter-width-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="gutter-width-inches">Inches</option>
+                                <option value="gutter-width-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="curb-height">Curb Height:</label>
+                            <input type="number" id="curb-height" name="curb-height">
+                            <select id="curb-height-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="curb-height-inches">Inches</option>
+                                <option value="curb-height-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="flag-thickness">Flag Thickness:</label>
+                            <input type="number" id="flag-thickness" name="flag-thickness">
+                            <select id="flag-thickness-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="flag-thickness-inches">Inches</option>
+                                <option value="flag-thickness-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="curb-total">Total Yards:</label>
+                            <input type="text" id="curb-total" name="curb-total" readonly>
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" id="submit-curb-gutter-data" class="button">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-curb-gutter-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the curb/gutter calculator-->
+                    <figure>
+                        <img src="./imgs/curb-gutter-diagram.png" alt="curb/gutter 3D model visual aid">
+                    </figure>
+                </div>
+
+                <!--Title container for the drain/tunnel calculator-->
+                <div class="title">
+                    <div class="heading"><h3>Drain/Tunnel Calculator</h3></div>
+                    <div class="caret" id="drain-tunnel-calculator-caret"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+
+                <div class="calculator-container" id="drain-tunnel-calculator">
+                    <form action="#" name="drain-tunnel-calculator">
+                        <fieldset class="grid">
+                            <label for="drain-tunnel-outer-diameter">Outer Diameter:</label>
+                            <input type="number" id="drain-tunnel-outer-diameter" name="drain-tunnel-outer-diameter">
+                            <select id="drain-tunnel-outer-diameter-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="drain-tunnel-outer-diameter-inches">Inches</option>
+                                <option value="drain-tunnel-outer-diameter-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="drain-tunnel-inner-diameter">Inner Diameter:</label>
+                            <input type="number" id="drain-tunnel-inner-diameter" name="drain-tunnel-inner-diameter">
+                            <select id="drain-tunnel-inner-diameter-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="drain-tunnel-inner-diameter-inches">Inches</option>
+                                <option value="drain-tunnel-inner-diameter-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="drain-tunnel-length">Length:</label>
+                            <input type="number" id="drain-tunnel-length" name="drain-tunnel-length">
+                            <select id="drain-tunnel-length-selection" class="spacing-left">
+                                <option value="">select</option>
+                                <option value="drain-tunnel-length-inches">Inches</option>
+                                <option value="drain-tunnel-length-feet">Feet</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <label for="drain-tunnel-total-yards">Total Yards:</label>
+                            <input type="text" id="drain-tunnel-total-yards" name="drain-tunnel-total-yards" readonly>
+                            <div class="spacing-left blank-div"></div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <div></div>
+                            <input type="button" value="Calculate" id="submit-drain-tunnel-data" class="button">
+                            <input type="reset" value="Reset" class="reset spacing-left" id="reset-drain-tunnel-data">
+                        </fieldset>
+                    </form>
+
+                    <!--The image aid for the curb/gutter calculator-->
+                    <figure>
+                        <img src="./imgs/drain-tunnel-diagram.png" alt="drain/tunnel 3D model visual aid">
                     </figure>
                 </div>
             </section>

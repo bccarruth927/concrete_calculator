@@ -100,6 +100,7 @@ main .wrapper #calculators {
 }
 main .wrapper #calculators .title {
   width: 90%;
+  margin-top: 2rem;
   display: flex;
   background-color: gray;
   padding: 1rem 0;
@@ -148,21 +149,30 @@ main .wrapper #calculators .calculator-container form .grid {
 main .wrapper #calculators .calculator-container form .button {
   font-size: 1rem;
   font-weight: bold;
+  text-align: center;
   background-color: gray;
   color: black;
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem;
   border: none;
   border-radius: 15px;
 }
 main .wrapper #calculators .calculator-container form .reset {
   font-size: 1rem;
   font-weight: bold;
+  text-align: center;
   background-color: gray;
   color: black;
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem;
   border: none;
   border-radius: 15px;
   font-size: 0.75rem;
+}
+main .wrapper #calculators .calculator-container form input[type=number],
+main .wrapper #calculators .calculator-container form input[type=text],
+main .wrapper #calculators .calculator-container form label,
+main .wrapper #calculators .calculator-container form select {
+  max-width: 80px;
+  min-width: 80px;
 }
 @media (min-width: 700px) {
   main .wrapper #calculators .calculator-container form {
@@ -191,4 +201,8 @@ main .wrapper #calculators .calculator-container figure {
 }
 .spacing-left {
   margin-left: 0.25rem;
+}
+.blank-div {
+  max-width: 80px;
+  min-width: 80px;
 }
