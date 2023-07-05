@@ -11,9 +11,13 @@ body {
   height: 100%;
   font-size: 16px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
 header {
   height: 10%;
-  width: 100%;
+  width: 100vw;
   display: flex;
   background-color: gray;
 }
@@ -49,11 +53,8 @@ header p {
     width: 90%;
   }
 }
-main {
-  height: 100%;
-}
 main .wrapper {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -198,6 +199,64 @@ main .wrapper #calculators .calculator-container figure {
     width: 50%;
     height: 100%;
   }
+}
+@media (min-width: 700px) {
+  main {
+    height: 100%;
+  }
+}
+footer {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: gray;
+  color: white;
+}
+footer #company-info {
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.6rem;
+}
+footer #company-info i {
+  padding-right: 0.75rem;
+}
+@media (min-width: 700px) {
+  footer #company-info {
+    width: 33%;
+  }
+}
+footer #socials {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+footer #socials a {
+  padding: 0 1rem;
+}
+@media (min-width: 700px) {
+  footer #socials {
+    width: 33%;
+    align-items: center;
+  }
+}
+footer #copyright {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+@media (min-width: 700px) {
+  footer #copyright {
+    width: 33%;
+    align-items: center;
+  }
+}
+a {
+  text-decoration: none;
 }
 .spacing-left {
   margin-left: 0.25rem;

@@ -10,9 +10,14 @@ html, body {
     font-size: 16px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     height: 10%;;
-    width: 100%;
+    width: 100vw;
     display: flex;
     background-color: gray;
 
@@ -51,10 +56,8 @@ header {
 }
 
 main {
-    height: 100%;
-
     .wrapper {
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-wrap: wrap;
 
@@ -201,6 +204,68 @@ main {
             }
         }
     }
+
+    @media (min-width: 700px) {
+        height: 100%;
+    }
+}
+
+footer {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gray;
+    color: white;
+
+    #company-info {
+        width: 100%;
+        padding: 0.75rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        line-height: 1.6rem;
+
+        i {
+            padding-right: 0.75rem;
+        }
+
+        @media (min-width: 700px) {
+            width: 33%;
+        }
+        
+    }
+
+    #socials {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 0;
+
+        a {
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 700px) {
+            width: 33%;
+            align-items: center;
+        }
+    }
+
+    #copyright {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 0;
+
+        @media (min-width: 700px) {
+            width: 33%;
+            align-items: center;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
 }
 
 .spacing-left {
