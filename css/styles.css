@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/fwv7ydk.css");
 *,
 ::before,
 ::after {
@@ -9,24 +10,29 @@ html,
 body {
   font-family: sans-serif;
   height: 100%;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 16px;
+  letter-spacing: 0.1em;
 }
 body {
   display: flex;
   flex-direction: column;
+  background-color: #F0F1E8;
 }
 header {
   height: 10%;
   width: 100vw;
   display: flex;
-  background-color: gray;
+  background-color: #135529;
+  box-shadow: 0 5px 15px 3px #000;
 }
 header figure {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px red solid;
 }
 @media (min-width: 700px) {
   header figure {
@@ -45,8 +51,11 @@ header p {
   display: flex;
   justify-content: start;
   align-items: center;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 1.25rem;
-  border: 1px red solid;
+  color: #fff;
 }
 @media (min-width: 700px) {
   header p {
@@ -69,10 +78,12 @@ main .wrapper #introduction {
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
-  border: 1px blue solid;
 }
 main .wrapper #introduction h1 {
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   text-align: center;
 }
 main .wrapper #introduction p {
@@ -83,6 +94,9 @@ main .wrapper #introduction ol {
 }
 main .wrapper #introduction li {
   padding: 0.25rem 1.5rem;
+}
+main .wrapper #introduction a {
+  color: #135529;
 }
 @media (min-width: 700px) {
   main .wrapper #introduction {
@@ -97,14 +111,14 @@ main .wrapper #calculators {
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
-  border: 1px green solid;
 }
 main .wrapper #calculators .title {
   width: 90%;
   margin-top: 2rem;
   display: flex;
-  background-color: gray;
+  background-color: #fff;
   padding: 1rem 0;
+  box-shadow: 0px 9px 15px -3px rgba(0, 0, 0, 0.1);
 }
 main .wrapper #calculators .title .heading {
   width: 80%;
@@ -112,14 +126,17 @@ main .wrapper #calculators .title .heading {
   justify-content: start;
   align-items: center;
   padding-left: 0.5rem;
-  color: white;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #000;
 }
 main .wrapper #calculators .title .caret {
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #135529;
 }
 main .wrapper #calculators .calculator-container {
   width: 90%;
@@ -128,6 +145,8 @@ main .wrapper #calculators .calculator-container {
   justify-content: center;
   background-color: white;
   color: black;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0px 9px 15px -3px rgba(0, 0, 0, 0.1);
 }
 main .wrapper #calculators .calculator-container form {
   width: 90%;
@@ -151,8 +170,8 @@ main .wrapper #calculators .calculator-container form .button {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  background-color: gray;
-  color: black;
+  background-color: #135529;
+  color: #fff;
   padding: 0.75rem 0.5rem;
   border: none;
   border-radius: 15px;
@@ -161,8 +180,8 @@ main .wrapper #calculators .calculator-container form .reset {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  background-color: gray;
-  color: black;
+  background-color: #135529;
+  color: #fff;
   padding: 0.75rem 0.5rem;
   border: none;
   border-radius: 15px;
@@ -209,8 +228,9 @@ footer {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  background-color: gray;
-  color: white;
+  background-color: #135529;
+  color: #fff;
+  box-shadow: 0 -5px 15px 3px #000;
 }
 footer #company-info {
   width: 100%;
@@ -219,6 +239,9 @@ footer #company-info {
   flex-direction: column;
   text-align: left;
   line-height: 1.6rem;
+}
+footer #company-info a {
+  color: #fff;
 }
 footer #company-info i {
   padding-right: 0.75rem;
@@ -236,6 +259,7 @@ footer #socials {
 }
 footer #socials a {
   padding: 0 1rem;
+  color: #fff;
 }
 @media (min-width: 700px) {
   footer #socials {
@@ -264,4 +288,10 @@ a {
 .blank-div {
   max-width: 80px;
   min-width: 80px;
+}
+.title-border {
+  border-radius: 15px;
+}
+.active-title {
+  border-radius: 15px 15px 0 0;
 }

@@ -19,23 +19,29 @@ $(document).ready(() => {
 
 
     //Event handlers attached to the carets of the calculator containers
-    $('#flatwork-calculator-caret').on('click', () => {
+    $('#flatwork-calculator-caret').on('click', (event) => {
         $('#flatwork-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
-    $('#round-work-calculator-caret').on('click', () => {
+    $('#round-work-calculator-caret').on('click', (event) => {
         $('#round-work-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
-    $('#wall-footer-calculator-caret').on('click', () => {
+    $('#wall-footer-calculator-caret').on('click', (event) => {
         $('#wall-footer-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
-    $('#stairs-calculator-caret').on('click', () => {
+    $('#stairs-calculator-caret').on('click', (event) => {
         $('#stairs-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
-    $('#curb-gutter-calculator-caret').on('click', () => {
+    $('#curb-gutter-calculator-caret').on('click', (event) => {
         $('#curb-gutter-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
-    $('#drain-tunnel-calculator-caret').on('click', () => {
+    $('#drain-tunnel-calculator-caret').on('click', (event) => {
         $('#drain-tunnel-calculator').slideToggle();
+        $(event.currentTarget).closest('.title').toggleClass('title-border').toggleClass('active-title');
     });
 
 

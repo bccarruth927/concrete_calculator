@@ -1,3 +1,10 @@
+//Variables
+@primary-action: #135529;
+@primary-neutral: #F0F1E8;
+
+//Font types
+@import url("https://use.typekit.net/fwv7ydk.css");
+
 *, ::before, ::after {
     margin: 0;
     padding: 0;
@@ -7,26 +14,32 @@
 html, body {
     font-family: sans-serif;
     height: 100%;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
+    letter-spacing: 0.1em;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    background-color: @primary-neutral;
 }
 
 header {
     height: 10%;;
     width: 100vw;
     display: flex;
-    background-color: gray;
+    background-color: @primary-action;
+    box-shadow: 0 5px 15px 3px #000;
 
     figure {
         width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px red solid;
+        //border: 1px red solid;
 
         @media (min-width: 700px) {
             width: 10%;
@@ -46,8 +59,12 @@ header {
         display: flex;
         justify-content: start;
         align-items: center;
+        font-family: "futura-pt", sans-serif;
+        font-weight: 700;
+        font-style: normal;
         font-size: 1.25rem;
-        border: 1px red solid;
+        color: #fff;
+        //border: 1px red solid;
 
         @media (min-width: 700px) {
             width: 90%;
@@ -71,10 +88,13 @@ main {
             justify-content: center;
             align-items: center;
             padding: 3rem 0;
-            border: 1px blue solid;
+            //border: 1px blue solid;
 
             h1 {
-                padding: 1rem 0;
+                padding: 1rem 0.5rem;
+                font-family: "futura-pt", sans-serif;
+                font-weight: 700;
+                font-style: normal;
                 text-align: center;
             }
 
@@ -90,6 +110,10 @@ main {
                 padding: 0.25rem 1.5rem;
             }
 
+            a {
+                color: @primary-action;
+            }
+
             @media (min-width: 700px) {
                 width: 50%;
                 height: 100%;
@@ -103,14 +127,16 @@ main {
             justify-content: center;
             align-items: center;
             padding: 3rem 0;
-            border: 1px green solid;
+            //border: 1px green solid;
 
             .title {
                 width: 90%;
                 margin-top: 2rem;
                 display: flex;
-                background-color: gray;
+                background-color: #fff;
                 padding: 1rem 0;
+                box-shadow: 0px 9px 15px -3px rgba(0,0,0,0.1);
+
 
                 .heading {
                     width: 80%;
@@ -118,7 +144,10 @@ main {
                     justify-content: start;
                     align-items: center;
                     padding-left: 0.5rem;
-                    color: white;
+                    font-family: "futura-pt", sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    color: #000;
                 }
 
                 .caret {
@@ -126,7 +155,7 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    color: white;
+                    color: @primary-action;
                 }
             }
 
@@ -137,6 +166,8 @@ main {
                 justify-content: center;
                 background-color: white;
                 color: black;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0px 9px 15px -3px rgba(0,0,0,0.1);
 
                 form {
                     width: 90%;
@@ -161,8 +192,8 @@ main {
                         font-size: 1rem;
                         font-weight: bold;
                         text-align: center;
-                        background-color: gray;
-                        color: black;
+                        background-color: @primary-action;
+                        color: #fff;
                         padding: 0.75rem 0.5rem;
                         border: none;
                         border-radius: 15px;
@@ -214,8 +245,9 @@ footer {
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    background-color: gray;
-    color: white;
+    background-color: @primary-action;
+    color: #fff;
+    box-shadow: 0 -5px 15px 3px #000;
 
     #company-info {
         width: 100%;
@@ -224,6 +256,10 @@ footer {
         flex-direction: column;
         text-align: left;
         line-height: 1.6rem;
+
+        a {
+            color: #fff;
+        }
 
         i {
             padding-right: 0.75rem;
@@ -243,6 +279,7 @@ footer {
 
         a {
             padding: 0 1rem;
+            color: #fff;
         }
 
         @media (min-width: 700px) {
@@ -275,4 +312,12 @@ a {
 .blank-div {
     max-width: 80px;
     min-width: 80px;
+}
+
+.title-border {
+    border-radius: 15px;
+}
+
+.active-title {
+    border-radius: 15px 15px 0 0;
 }
