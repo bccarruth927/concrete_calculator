@@ -11,8 +11,8 @@ The caluclator then gives them a result which is the cubic yardage they need to 
 
 This project currently has six available calculators.
 
-- Slab/Sidewalk/Flatwork Calculator
-- Hole/Pier hole/Round Work Calculator
+- Flatwork Calculator
+- Round Work Calculator
 - Wall/Footer Calculator
 - Stairs Calculator
 - Curb/Gutter Calculator
@@ -27,7 +27,7 @@ While the calculators are the main features of the project additional features h
 - Validation on all input and select fields
   - Each blank input field has been scripted to produce an error if the user leaves the field blank or enters a non-numerical character.
   - Each select field has been scripted to throw an error if the user fails to select a measurement option.
-- The **Clear** button has been designed to reset all values in the calculator to their default state.
+- The **Reset** button has been designed to reset all values in the calculator to their default state.
 - Visual images have been provided below each calculator to give the user a visual of the project and what each calculator input corresponds to.
 
 **Example image**
