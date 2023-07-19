@@ -52,5 +52,5 @@ Completion of this project used the following programming languages and applicat
 
 - HTML5
 - CSS
-- JavaScript
+- JavaScript (jQuery.js)
 - Adobe Illustrator
