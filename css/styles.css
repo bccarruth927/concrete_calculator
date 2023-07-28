@@ -184,7 +184,6 @@ main .wrapper #calculators .calculator-container form .button {
   color: #fff;
   padding: 0.75rem 0;
   border: none;
-  border-radius: 15px;
 }
 main .wrapper #calculators .calculator-container form .reset {
   width: 80px;
@@ -195,7 +194,6 @@ main .wrapper #calculators .calculator-container form .reset {
   color: #fff;
   padding: 0.75rem 0;
   border: none;
-  border-radius: 15px;
 }
 main .wrapper #calculators .calculator-container form input[type=number],
 main .wrapper #calculators .calculator-container form input[type=text],
