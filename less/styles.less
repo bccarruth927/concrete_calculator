@@ -13,7 +13,7 @@
 
 html, body {
     font-family: sans-serif;
-    height: 100%;
+    //height: 100%;
     font-family: "neue-haas-grotesk-display", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -41,7 +41,7 @@ header {
         align-items: center;
         //border: 1px red solid;
 
-        @media (min-width: 700px) {
+        @media (min-width: 825px) {
             width: 10%;
         }
 
@@ -66,7 +66,7 @@ header {
         color: #fff;
         //border: 1px red solid;
 
-        @media (min-width: 700px) {
+        @media (min-width: 825px) {
             width: 90%;
         }
     }
@@ -78,9 +78,11 @@ main {
         display: flex;
         flex-wrap: wrap;
 
+        /*
         @media (min-width: 700px) {
             height: 100%;
         }
+        */
 
         #introduction {
             width: 100%;
@@ -114,7 +116,7 @@ main {
                 color: @primary-action;
             }
 
-            @media (min-width: 700px) {
+            @media (min-width: 825px) {
                 width: 50%;
                 height: 100%;
             }
@@ -122,10 +124,13 @@ main {
 
         #calculators {
             width: 100%;
+            /*
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            */
+            margin: auto;
             padding: 3rem 0;
             //border: 1px green solid;
 
@@ -189,19 +194,19 @@ main {
                     }
 
                     .button {
-                        font-size: 1rem;
+                        width: 80px;
+                        font-size: 0.75rem;
                         font-weight: bold;
                         text-align: center;
                         background-color: @primary-action;
                         color: #fff;
-                        padding: 0.75rem 0.5rem;
+                        padding: 0.75rem 0;
                         border: none;
                         border-radius: 15px;
                     }
 
                     .reset {
                         .button();
-                        font-size: 0.75rem;
                     }
 
                     input[type=number], input[type=text], label, select {
@@ -209,7 +214,11 @@ main {
                         min-width: 80px;
                     }
 
-                    @media (min-width: 700px) {
+                    @media (min-width: 825px) {
+                        width: 100%;
+                    }
+
+                    @media (min-width: 1300px) {
                         width: 48%;
                         margin-left: 2%;
                     }
@@ -222,23 +231,29 @@ main {
                     justify-content: center;
                     align-items: center;
 
-                    @media (min-width: 700px) {
+                    @media (min-width: 825px) {
+                        width: 100%;
+                    }
+
+                    @media (min-width: 1300px) {
                         width: 48%;
                         margin-left: 2%;
                     }
                 }
             }
 
-            @media (min-width: 700px) {
+            @media (min-width: 825px) {
                 width: 50%;
                 height: 100%;
             }
         }
     }
 
-    @media (min-width: 700px) {
+    /*
+    @media (min-width: 825px) {
         height: 100%;
     }
+    */
 }
 
 footer {
@@ -265,7 +280,7 @@ footer {
             padding-right: 0.75rem;
         }
 
-        @media (min-width: 700px) {
+        @media (min-width: 825px) {
             width: 33%;
         }
         
@@ -282,7 +297,7 @@ footer {
             color: #fff;
         }
 
-        @media (min-width: 700px) {
+        @media (min-width: 825px) {
             width: 33%;
             align-items: center;
         }
@@ -294,7 +309,7 @@ footer {
         justify-content: center;
         padding: 0.75rem 0;
 
-        @media (min-width: 700px) {
+        @media (min-width: 825px) {
             width: 33%;
             align-items: center;
         }
